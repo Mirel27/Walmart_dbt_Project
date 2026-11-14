@@ -1,0 +1,20 @@
+[project]
+name = "walmart-dbt-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mirel Agy", email = "1996desouzanathan@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "dbt-core>=1.12.7",
+    "dbt-databricks>=1.10.9",
+]
+
+[project.scripts]
+walmart-dbt-project = "walmart_dbt_project:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"

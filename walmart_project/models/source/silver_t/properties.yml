@@ -1,0 +1,22 @@
+
+version: 2
+
+models:
+  - name: products_t
+    description: "This table contains the products data from the bronze layer."
+    columns:
+      - name: product_id
+        description: "The unique identifier for each product."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: price
+        description: "The product price."
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+              config:
+                severity: warn

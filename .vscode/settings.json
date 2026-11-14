@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.envFile": "${workspaceFolder}\\.env",
+  "files.associations": {
+    "*.sql": "jinja-sql",
+    "*.yml": "jinja-yaml",
+    "*.yaml": "jinja-yaml"
+  }
+}

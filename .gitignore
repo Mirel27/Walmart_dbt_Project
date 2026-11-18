@@ -12,5 +12,4 @@ wheels/
 # Local credentials
 .env
 
-#Logs
-*.log
+

@@ -13,7 +13,8 @@
             o.created_timestamp AS order_created_timestamp,
             o.updated_timestamp AS order_updated_timestamp,
             o.is_active AS order_is_active,
-            o.processed_at AS order_processed_at
+            o.processed_at AS order_processed_at,
+            current_timestamp() AS obd_processed_at
         """,
         "alias": "o"
     },
@@ -104,6 +105,14 @@
         "join": "s.store_id = e.store_id"
     }
 ] %}
+
+{{
+    config(
+        materialized='table',
+        schema='silver_b'
+
+    )
+}}
 
 SELECT
     {% for config in configs %}

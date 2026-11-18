@@ -32,6 +32,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   walmart_project:
     # Config indicated by + and applies to all files under models/example/
-    sources:
+    silver_b:
       +materialized: table
-      +schema: "silver_t"
+      +schema: silver_b
+    silver_t:
+      +materialized: table
+      +schema: silver_t

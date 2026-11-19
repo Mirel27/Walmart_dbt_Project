@@ -1,0 +1,10 @@
+snapshots:
+  - name: dim_customers
+    relation: ref('eph_customers')
+    config:
+      schema: gold
+      database: walmart
+      unique_key: customer_id # on this key the upserts will be performed
+      strategy: timestamp
+      updated_at: customer_updated_timestamp # the column that will be used to determine if a record has changed
+      dbt_valid_to_current: "to_date('9999-12-31')" # Specifies that current records should have `dbt_valid_to` set to `'9999-12-31'` instead of `NULL`.
